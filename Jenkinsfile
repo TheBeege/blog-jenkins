@@ -1,6 +1,6 @@
 node {
     stage('Clone') {
-        git url 'https://github.com/TheBeege/blog-jenkins'
+        git url: 'https://github.com/TheBeege/blog-jenkins'
     }
 
     stage('Build') {
