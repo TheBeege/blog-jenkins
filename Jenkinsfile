@@ -1,4 +1,8 @@
 node {
+    stage('Clone') {
+        git url 'https://github.com/TheBeege/blog-jenkins'
+    }
+
     stage('Build') {
         if (isUnix()) {
             sh './gradlew clean build'
