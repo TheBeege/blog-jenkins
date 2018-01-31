@@ -18,12 +18,10 @@ node {
         }
     }
     stage('Deploy') {
-        steps {
-            if (isUnix()) {
-                sh 'java -jar build/libs/gs-spring-boot-0.1.0.jar &'
-            } else {
-                bat 'start /B java -jar build/libs/gs-spring-boot-0.10.jar'
-            }
+        if (isUnix()) {
+            sh 'java -jar build/libs/gs-spring-boot-0.1.0.jar &'
+        } else {
+            bat 'start /B java -jar build/libs/gs-spring-boot-0.10.jar'
         }
     }
 }
